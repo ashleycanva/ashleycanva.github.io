@@ -261,7 +261,7 @@
 
     .skill-card {
       background: var(--white);
-      border: 3px solid var(--dark);
+      border: 4px solid var(--dark);
       border-radius: 1.2rem; padding: 2rem;
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
     }
@@ -291,38 +291,55 @@
 
     .project-card {
       background: var(--white);
-      border: 3px solid var(--teal);
-      border-radius: 1.2rem; padding: 2rem;
+      border: none;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.3s cubic-bezier(.22,.68,0,1.2), box-shadow 0.3s;
     }
 
     .project-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 24px 50px rgba(0,0,0,0.35);
+      transform: translateY(-10px);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.4);
     }
 
-    .project-type {
-      font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase;
-      font-weight: 600; color: var(--teal); margin-bottom: 0.7rem;
+    .project-img-area {
+      flex: 3;
+      position: relative;
+      overflow: hidden;
+      min-height: 190px;
     }
 
-    .project-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
-
-    .project-card h3 {
-      font-family: 'Newsreader', serif; font-size: 1.2rem;
-      color: var(--dark); margin-bottom: 0.7rem; line-height: 1.3;
+    .project-info-area,
+    .project-body {
+      flex: 1;
+      background: var(--white);
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
     }
 
-    .project-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.4rem; }
+    .project-info-area h3,
+    .project-body h3 {
+      font-family: 'Newsreader', serif;
+      font-size: 1rem;
+      color: var(--dark);
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
 
-    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-
-    .project-tag {
-      background: rgba(249,220,92,0.18);
-      border: 1.5px solid #d4b800;
-      color: #7a6800;
-      padding: 0.28rem 0.8rem; border-radius: 2rem;
-      font-size: 0.76rem; font-weight: 500;
+    .proj-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     /* CONTACT */
@@ -404,12 +421,10 @@
     }
 
     /* FEATURED PROJECT CARD */
-    .project-card--featured { padding: 0; overflow: hidden; }
-
     .project-cover {
+      flex: 3;
       background: linear-gradient(135deg, #191923 0%, #192820 100%);
       padding: 1.8rem 2rem 1.6rem;
-      min-height: 145px;
       position: relative; overflow: hidden;
       display: flex; flex-direction: column; justify-content: flex-end;
     }
@@ -441,7 +456,7 @@
       margin-top: 0.3rem; font-style: italic;
       position: relative; z-index: 1;
     }
-    .project-body { padding: 1.6rem 2rem 2rem; }
+    .project-body { flex: 1; }
     .view-case-study {
       display: inline-flex; align-items: center; gap: 0.4rem;
       margin-top: 1.2rem; font-size: 0.82rem; font-weight: 600;
@@ -542,78 +557,49 @@
             <div class="cover-sub">A Brand Reimagined</div>
           </div>
           <div class="project-body">
-            <div class="project-type">Full-Stack Digital Marketing</div>
             <h3>UPPF — Rebranding & Digital Growth</h3>
-            <p>Led a complete digital transformation for a global PPF brand — website rebuild, 70 product assets, viral social content, and a 400+ national dealer network.</p>
-            <div class="project-tags">
-              <span class="project-tag">Zoho Sites</span>
-              <span class="project-tag">Social Media</span>
-              <span class="project-tag">Paid Ads</span>
-              <span class="project-tag">Email</span>
-              <span class="project-tag">SEO</span>
-            </div>
+            <p class="proj-desc">Full-stack digital transformation — website rebuild, viral content, and a 400+ national dealer network.</p>
             <a href="uppf.html" class="view-case-study">View Case Study →</a>
           </div>
         </div>
 
         <div class="project-card fade-in">
-          <span class="project-icon">✉️</span>
-          <div class="project-type">Email Marketing</div>
-          <h3>Zoho Email Campaign — 35% Open Rate</h3>
-          <p>Executed email campaigns via Zoho Campaigns achieving a 35% open rate and 4% CTR — well above industry average — through strong copy and audience segmentation.</p>
-          <div class="project-tags">
-            <span class="project-tag">Zoho Campaigns</span>
-            <span class="project-tag">Copywriting</span>
-            <span class="project-tag">Segmentation</span>
+          <div class="project-img-area" style="background: linear-gradient(135deg, #5BA08C 0%, #1a3830 100%);"></div>
+          <div class="project-info-area">
+            <h3>Zoho Email Campaign — 35% Open Rate</h3>
+            <p class="proj-desc">35% open rate and 4% CTR through targeted copy and audience segmentation via Zoho Campaigns.</p>
           </div>
         </div>
 
         <div class="project-card fade-in">
-          <span class="project-icon">🔍</span>
-          <div class="project-type">Website & SEO</div>
-          <h3>UPPF Website Rebuild & SEO</h3>
-          <p>Built and managed the company website on Zoho Sites during a full brand refresh, implementing SEO strategies that tripled the website's Domain Rating.</p>
-          <div class="project-tags">
-            <span class="project-tag">Zoho Sites</span>
-            <span class="project-tag">SEO</span>
-            <span class="project-tag">Brand Refresh</span>
+          <div class="project-img-area" style="background: linear-gradient(135deg, #2d3a5a 0%, #1a2038 100%);"></div>
+          <div class="project-info-area">
+            <h3>UPPF Website Rebuild & SEO</h3>
+            <p class="proj-desc">Rebuilt uppf-usa.com on Zoho Sites with SEO that tripled the brand's Domain Rating.</p>
           </div>
         </div>
 
         <div class="project-card fade-in">
-          <span class="project-icon">💰</span>
-          <div class="project-type">Paid Advertising</div>
-          <h3>MogeTee Facebook & Instagram Ads</h3>
-          <p>Optimized Facebook and Instagram ads with A/B testing and influencer collaborations — growing Instagram by 3,000+ followers for a New York fashion brand.</p>
-          <div class="project-tags">
-            <span class="project-tag">Meta Ads</span>
-            <span class="project-tag">A/B Testing</span>
-            <span class="project-tag">Influencer Marketing</span>
+          <div class="project-img-area" style="background: linear-gradient(135deg, #c89520 0%, #7a5a10 50%, #191923 100%);"></div>
+          <div class="project-info-area">
+            <h3>MogeTee Facebook & Instagram Ads</h3>
+            <p class="proj-desc">A/B tested ads and influencer campaigns grew a NY fashion brand's Instagram by 3,000+ followers.</p>
           </div>
         </div>
 
         <div class="project-card fade-in">
-          <span class="project-icon">📦</span>
-          <div class="project-type">E-commerce</div>
-          <h3>150+ Product Listings — Amazon, eBay & More</h3>
-          <p>Managed and optimized 150+ product listings across Amazon, eBay, Walmart, and Wayfair for Universal Flooring Supply — maximizing visibility and conversions.</p>
-          <div class="project-tags">
-            <span class="project-tag">Amazon</span>
-            <span class="project-tag">eBay</span>
-            <span class="project-tag">Walmart</span>
-            <span class="project-tag">Wayfair</span>
+          <div class="project-img-area" style="background: linear-gradient(135deg, #3d5040 0%, #1f2825 100%);"></div>
+          <div class="project-info-area">
+            <h3>150+ Listings — Amazon, eBay & More</h3>
+            <p class="proj-desc">Managed and optimized 150+ product listings across Amazon, eBay, Walmart, and Wayfair.</p>
           </div>
         </div>
 
         <div class="project-card fade-in">
-          <span class="project-icon">🛍️</span>
-          <div class="project-type">E-commerce Brand</div>
-          <h3>Eau De Lash — Built from Scratch</h3>
-          <p>Launched a full e-commerce brand from the ground up — including brand identity, website, packaging design, Google Ads, and social media content.</p>
-          <div class="project-tags">
-            <span class="project-tag">Wix</span>
-            <span class="project-tag">Google Ads</span>
-            <span class="project-tag">Brand Identity</span>
+          <div class="project-img-area" style="background: linear-gradient(135deg, #c49098 0%, #7a4858 100%);"></div>
+          <div class="project-info-area">
+            <h3>Eau De Lash — Built from Scratch</h3>
+            <p class="proj-desc">Launched a full e-commerce brand from concept to live — brand identity, website, Google Ads, and social.</p>
           </div>
         </div>
 
