@@ -93,7 +93,27 @@
     .case-intro {
       font-size: 1.06rem; color: rgba(255,255,255,0.65);
       max-width: 600px; font-weight: 300; line-height: 1.85;
+      margin-bottom: 2rem;
     }
+    .hero-links {
+      display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem;
+    }
+    .hero-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.8rem; border-radius: 2rem;
+      font-size: 0.88rem; font-weight: 600; text-decoration: none;
+      transition: all 0.25s;
+    }
+    .hero-btn--primary {
+      background: var(--gold); color: var(--dark);
+      border: 2px solid var(--gold);
+    }
+    .hero-btn--primary:hover { background: var(--white); border-color: var(--white); transform: translateY(-3px); }
+    .hero-btn--outline {
+      background: transparent; color: rgba(255,255,255,0.75);
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+    .hero-btn--outline:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-3px); }
 
     /* STATS BAR */
     .stats-bar {
@@ -263,6 +283,10 @@
       <p class="case-intro">
         A fully self-built lash e-commerce brand — from sourcing an innovative product to designing the brand kit, launching social channels, and growing an audience of 1,300+ in just a few months.
       </p>
+      <div class="hero-links">
+        <a href="https://thanhthanh12396.wixsite.com/eaudelashh" target="_blank" class="hero-btn hero-btn--primary">🌐 View Website →</a>
+        <a href="https://www.instagram.com/eaude.lash/" target="_blank" class="hero-btn hero-btn--outline">📸 @eaude.lash on Instagram</a>
+      </div>
     </div>
     <div class="stats-bar">
       <div class="stat-item">
@@ -306,7 +330,11 @@
         </div>
         <div class="meta-block">
           <div class="meta-label">Channels</div>
-          <div class="meta-value">Instagram · Facebook · TikTok · Shopify</div>
+          <div class="meta-value">
+            <a href="https://www.instagram.com/eaude.lash/" target="_blank" style="color: var(--teal); text-decoration: none;">Instagram ↗</a>
+            · Facebook · TikTok ·
+            <a href="https://thanhthanh12396.wixsite.com/eaudelashh" target="_blank" style="color: var(--teal); text-decoration: none;">Shopify ↗</a>
+          </div>
         </div>
         <div class="meta-block">
           <div class="meta-label">Scope</div>
