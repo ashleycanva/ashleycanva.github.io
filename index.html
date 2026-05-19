@@ -402,6 +402,54 @@
       .skills-grid { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
     }
+
+    /* FEATURED PROJECT CARD */
+    .project-card--featured { padding: 0; overflow: hidden; }
+
+    .project-cover {
+      background: linear-gradient(135deg, #191923 0%, #192820 100%);
+      padding: 1.8rem 2rem 1.6rem;
+      min-height: 145px;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .project-cover::before {
+      content: ''; position: absolute;
+      top: -35px; right: -35px;
+      width: 150px; height: 150px;
+      border-radius: 50%; background: var(--gold); opacity: 0.09;
+    }
+    .project-cover::after {
+      content: ''; position: absolute;
+      bottom: -25px; right: 40px;
+      width: 100px; height: 100px;
+      border-radius: 50%; background: var(--teal); opacity: 0.15;
+    }
+    .cover-tag {
+      font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); font-weight: 600;
+      margin-bottom: 0.4rem; position: relative; z-index: 1;
+    }
+    .cover-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700; color: var(--white);
+      line-height: 1.05; letter-spacing: -0.02em;
+      position: relative; z-index: 1;
+    }
+    .cover-sub {
+      font-size: 0.8rem; color: var(--teal);
+      margin-top: 0.3rem; font-style: italic;
+      position: relative; z-index: 1;
+    }
+    .project-body { padding: 1.6rem 2rem 2rem; }
+    .view-case-study {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 1.2rem; font-size: 0.82rem; font-weight: 600;
+      color: var(--teal); text-decoration: none;
+      border: 1.5px solid var(--teal); padding: 0.4rem 1.1rem;
+      border-radius: 2rem; transition: all 0.2s;
+    }
+    .view-case-study:hover { background: var(--teal); color: var(--white); }
   </style>
 </head>
 <body>
@@ -529,15 +577,24 @@
       <div class="divider fade-in"></div>
       <div class="projects-grid">
 
-        <div class="project-card fade-in">
-          <span class="project-icon">📱</span>
-          <div class="project-type">Social Media Marketing</div>
-          <h3>UPPF Brand Social Media</h3>
-          <p>Planned and produced weekly social content using Higgsfield AI, CapCut, and Canva to grow brand visibility and engagement for an automotive film company.</p>
-          <div class="project-tags">
-            <span class="project-tag">Higgsfield AI</span>
-            <span class="project-tag">CapCut</span>
-            <span class="project-tag">Canva</span>
+        <div class="project-card project-card--featured fade-in">
+          <div class="project-cover">
+            <div class="cover-tag">✦ Case Study</div>
+            <div class="cover-brand">UPPF</div>
+            <div class="cover-sub">A Brand Reimagined</div>
+          </div>
+          <div class="project-body">
+            <div class="project-type">Full-Stack Digital Marketing</div>
+            <h3>UPPF — Rebranding & Digital Growth</h3>
+            <p>Led a complete digital transformation for a global PPF brand — website rebuild, 70 product assets, viral social content, and a 400+ national dealer network.</p>
+            <div class="project-tags">
+              <span class="project-tag">Zoho Sites</span>
+              <span class="project-tag">Social Media</span>
+              <span class="project-tag">Paid Ads</span>
+              <span class="project-tag">Email</span>
+              <span class="project-tag">SEO</span>
+            </div>
+            <a href="uppf.html" class="view-case-study">View Case Study →</a>
           </div>
         </div>
 
