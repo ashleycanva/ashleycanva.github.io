@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eau De Lash — Case Study | Ashley Duong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:  #75B09C;
+      --dark:  #191923;
+      --gold:  #F9DC5C;
+      --white: #ffffff;
+      --off:   #f7f7f5;
+      --muted: #6b6b78;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.3rem 4rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 3px solid var(--teal);
+    }
+    .nav-logo {
+      font-family: 'Newsreader', serif; font-size: 1.4rem; font-weight: 700;
+      color: var(--dark); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-back {
+      text-decoration: none; color: var(--muted);
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--dark); }
+
+    /* HERO */
+    .case-hero {
+      min-height: 92vh;
+      background: linear-gradient(135deg, #2a0a14 0%, #3d1525 50%, #191923 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 8rem 4rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .case-hero::before {
+      content: ''; position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: #c49098; opacity: 0.08;
+    }
+    .case-hero::after {
+      content: ''; position: absolute;
+      bottom: -40px; left: 120px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: var(--teal); opacity: 0.1;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 780px; }
+    .case-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); font-weight: 600;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      padding: 0.4rem 1.1rem; border-radius: 2rem; margin-bottom: 1.8rem;
+    }
+    .case-title {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700; color: var(--white);
+      line-height: 1.06; letter-spacing: -0.03em; margin-bottom: 0.6rem;
+    }
+    .case-subtitle {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-style: italic; color: var(--teal);
+      line-height: 1.2; margin-bottom: 1.6rem;
+    }
+    .case-intro {
+      font-size: 1.06rem; color: rgba(255,255,255,0.65);
+      max-width: 600px; font-weight: 300; line-height: 1.85;
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      background: rgba(255,255,255,0.05);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 4rem;
+      display: flex; flex-wrap: wrap;
+      position: relative; z-index: 1;
+    }
+    .stat-item {
+      flex: 1; min-width: 140px;
+      padding: 2rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Newsreader', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-top: 0.4rem;
+    }
+
+    /* SECTIONS */
+    .cs-section { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+    .cs-section--alt { background: var(--off); padding: 6rem 4rem; }
+    .cs-section--alt .cs-inner { max-width: 1100px; margin: 0 auto; }
+    .cs-section--dark { background: var(--dark); padding: 6rem 4rem; }
+    .cs-section--dark .cs-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--teal); font-weight: 600; margin-bottom: 0.9rem;
+    }
+    .section-title {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.2rem;
+    }
+    .divider {
+      width: 48px; height: 4px;
+      background: var(--gold); border-radius: 2px; margin-bottom: 2.5rem;
+    }
+
+    /* OVERVIEW */
+    .overview-grid {
+      display: grid; grid-template-columns: 1.6fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .overview-text p {
+      color: var(--muted); margin-bottom: 1.2rem;
+      font-weight: 300; font-size: 1.04rem;
+    }
+    .overview-meta { display: flex; flex-direction: column; gap: 1.5rem; }
+    .meta-block {
+      background: var(--white); border: 3px solid var(--dark);
+      border-radius: 1rem; padding: 1.4rem 1.6rem;
+    }
+    .meta-label {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;
+    }
+    .meta-value { font-family: 'Newsreader', serif; font-size: 1.05rem; color: var(--dark); }
+
+    /* CHALLENGE CARDS */
+    .challenge-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem;
+    }
+    .challenge-card {
+      background: var(--white); border: 3px solid var(--dark);
+      border-radius: 1.2rem; padding: 2rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .challenge-card:hover { transform: translateY(-5px); box-shadow: 6px 6px 0 var(--gold); }
+    .challenge-num {
+      font-family: 'Newsreader', serif; font-size: 2.2rem; font-weight: 700;
+      color: var(--teal); opacity: 0.35; line-height: 1; margin-bottom: 0.8rem;
+    }
+    .challenge-card h3 {
+      font-family: 'Newsreader', serif; font-size: 1.1rem; margin-bottom: 0.6rem;
+    }
+    .challenge-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* APPROACH */
+    .approach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .approach-pillar {
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 1.2rem; padding: 2rem 2.2rem;
+    }
+    .pillar-step {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;
+    }
+    .pillar-title {
+      font-family: 'Newsreader', serif; font-size: 1.2rem; color: var(--white);
+      margin-bottom: 0.8rem; line-height: 1.25;
+    }
+    .pillar-body { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .pillar-body li { margin-left: 1.1rem; margin-bottom: 0.35rem; }
+
+    /* RESULTS */
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+    .result-card {
+      background: var(--white); border: 3px solid var(--dark);
+      border-radius: 1.2rem; padding: 2rem; text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .result-card:hover { transform: translateY(-5px); box-shadow: 6px 6px 0 var(--gold); }
+    .result-num {
+      font-family: 'Newsreader', serif; font-size: 2.4rem; font-weight: 700;
+      color: var(--teal); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .result-label { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* BACK LINK */
+    .back-wrap { text-align: center; padding: 5rem 4rem; background: var(--dark); }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--dark);
+      padding: 1rem 2.4rem; border-radius: 2rem;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      transition: all 0.25s;
+    }
+    .back-btn:hover { background: var(--teal); color: var(--white); transform: translateY(-3px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.4);
+      text-align: center; padding: 2rem; font-size: 0.85rem;
+      border-top: 3px solid var(--teal);
+    }
+    footer span { color: var(--gold); }
+
+    /* FADE IN */
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1.1rem 1.5rem; }
+      .case-hero { padding: 7rem 1.5rem 3rem; }
+      .cs-section, .cs-section--alt, .cs-section--dark { padding: 4rem 1.5rem; }
+      .overview-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .challenge-grid { grid-template-columns: 1fr; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .stat-item { min-width: 120px; padding: 1.4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Ashley <span>Duong</span></a>
+    <a href="index.html" class="nav-back">← Back to Portfolio</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="case-hero">
+    <div class="hero-inner">
+      <div class="case-tag">✦ Case Study — Brand Building for E-Commerce</div>
+      <h1 class="case-title">Eau De Lash</h1>
+      <div class="case-subtitle">Building a Beauty Brand from the Ground Up</div>
+      <p class="case-intro">
+        A fully self-built lash e-commerce brand — from sourcing an innovative product to designing the brand kit, launching social channels, and growing an audience of 1,300+ in just a few months.
+      </p>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">1.3K+</div>
+        <div class="stat-label">Organic Followers Gained</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Social Channels Launched</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0→1</div>
+        <div class="stat-label">Brand Built from Scratch</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Full</div>
+        <div class="stat-label">Brand Kit + E-Commerce Site</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="cs-section">
+    <div class="overview-grid">
+      <div class="overview-text fade-in">
+        <div class="section-label">Overview</div>
+        <h2 class="section-title">A lash brand, built entirely from scratch</h2>
+        <div class="divider"></div>
+        <p>Eau De Lash is a beauty e-commerce brand I created from the ground up — not just the marketing, but the product itself. I identified the target market (women 18–35), sourced an innovative product from China, and built the entire brand identity including logo, product packaging, social media templates, and color palette.</p>
+        <p>The project combined entrepreneurship with digital marketing — I had to think like both a founder and a strategist, launching simultaneously across a Shopify store, Instagram, Facebook, and TikTok.</p>
+        <p>The product itself was the differentiator: an all-in-one adhesive eyeliner that doubles as lash glue — an innovative 1-step solution that didn't exist from most competitors at the time.</p>
+      </div>
+      <div class="overview-meta fade-in">
+        <div class="meta-block">
+          <div class="meta-label">Industry</div>
+          <div class="meta-value">Beauty & E-Commerce</div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-label">My Role</div>
+          <div class="meta-value">Founder & Marketing Lead</div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-label">Channels</div>
+          <div class="meta-value">Instagram · Facebook · TikTok · Shopify</div>
+        </div>
+        <div class="meta-block">
+          <div class="meta-label">Scope</div>
+          <div class="meta-value">Brand Identity · Product Sourcing · Social Media · Paid Ads · Affiliate Marketing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHALLENGE -->
+  <div class="cs-section--alt">
+    <div class="cs-inner">
+      <div class="section-label fade-in">The Challenge</div>
+      <h2 class="section-title fade-in">Breaking into a saturated beauty market</h2>
+      <div class="divider fade-in"></div>
+      <div class="challenge-grid">
+        <div class="challenge-card fade-in">
+          <div class="challenge-num">01</div>
+          <h3>Dominant Competitors</h3>
+          <p>The false lash market was dominated by established brands — DoeBaby, HouseOfLash, Glamnetic — with loyal audiences and large ad budgets. Standing out required a genuinely different value proposition.</p>
+        </div>
+        <div class="challenge-card fade-in">
+          <div class="challenge-num">02</div>
+          <h3>Zero Starting Point</h3>
+          <p>No brand, no audience, no product — everything had to be built simultaneously. I had to source the right product, create the brand identity, design packaging, and launch marketing all at once.</p>
+        </div>
+        <div class="challenge-card fade-in">
+          <div class="challenge-num">03</div>
+          <h3>Product-Market Fit</h3>
+          <p>Finding a product niche that would resonate with women 18–35 while offering something new — not just another lash brand, but a smarter, easier solution for everyday wear.</p>
+        </div>
+        <div class="challenge-card fade-in">
+          <div class="challenge-num">04</div>
+          <h3>Multi-Channel Growth</h3>
+          <p>Building organic reach across Instagram, Facebook, and TikTok while running paid ads and recruiting influencers — all with a lean budget and no existing follower base.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPROACH -->
+  <div class="cs-section--dark">
+    <div class="cs-inner">
+      <div class="section-label fade-in" style="color: var(--gold);">The Approach</div>
+      <h2 class="section-title fade-in" style="color: var(--white);">Four pillars to launch and grow</h2>
+      <div class="divider fade-in"></div>
+      <div class="approach-grid">
+        <div class="approach-pillar fade-in">
+          <div class="pillar-step">Pillar 01</div>
+          <div class="pillar-title">Brand Identity & Product Innovation</div>
+          <div class="pillar-body">
+            <ul>
+              <li>Sourced a unique adhesive eyeliner + lash glue hybrid product from China</li>
+              <li>Designed full brand kit: logo, color palette, packaging, social media templates</li>
+              <li>Built a Shopify e-commerce store with product photography and copy</li>
+              <li>Positioned Eau De Lash as a smarter, 1-step alternative to traditional lash routines</li>
+            </ul>
+          </div>
+        </div>
+        <div class="approach-pillar fade-in">
+          <div class="pillar-step">Pillar 02</div>
+          <div class="pillar-title">Aesthetic Content Creation</div>
+          <div class="pillar-body">
+            <ul>
+              <li>Produced beauty-forward content tailored to women 18–35 on Instagram and TikTok</li>
+              <li>Created reels, tutorials, and product demos aligned with trending beauty aesthetics</li>
+              <li>Maintained a consistent visual brand identity across all platforms</li>
+              <li>Used Canva and editing tools to produce high-quality assets on a lean budget</li>
+            </ul>
+          </div>
+        </div>
+        <div class="approach-pillar fade-in">
+          <div class="pillar-step">Pillar 03</div>
+          <div class="pillar-title">Paid Advertising & Social Growth</div>
+          <div class="pillar-body">
+            <ul>
+              <li>Launched targeted Facebook and Instagram ad campaigns to drive discovery</li>
+              <li>Ran A/B tests on creative and audience segments to maximize ROI</li>
+              <li>Built organic follower base to 1,300+ within the first few months post-launch</li>
+              <li>Used social media management tools to schedule and monitor performance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="approach-pillar fade-in">
+          <div class="pillar-step">Pillar 04</div>
+          <div class="pillar-title">Affiliate & Influencer Marketing</div>
+          <div class="pillar-body">
+            <ul>
+              <li>Recruited micro-influencers in the beauty niche for product seeding and reviews</li>
+              <li>Set up an affiliate program to incentivize word-of-mouth referrals</li>
+              <li>Coordinated content creation and posting schedules with influencer partners</li>
+              <li>Leveraged creator audiences to drive targeted traffic to the Shopify store</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="cs-section">
+    <div class="section-label fade-in">Results</div>
+    <h2 class="section-title fade-in">Launched, grown, and proven</h2>
+    <div class="divider fade-in"></div>
+    <div class="results-grid">
+      <div class="result-card fade-in">
+        <div class="result-num">1.3K+</div>
+        <div class="result-label">Organic followers gained within the first few months of launch</div>
+      </div>
+      <div class="result-card fade-in">
+        <div class="result-num">3</div>
+        <div class="result-label">Social channels launched simultaneously (Instagram, Facebook, TikTok)</div>
+      </div>
+      <div class="result-card fade-in">
+        <div class="result-num">0→1</div>
+        <div class="result-label">Full brand built from concept — product, identity, store, and audience</div>
+      </div>
+      <div class="result-card fade-in">
+        <div class="result-num">Unique</div>
+        <div class="result-label">Innovative adhesive eyeliner + lash glue product brought to market</div>
+      </div>
+      <div class="result-card fade-in">
+        <div class="result-num">Full Kit</div>
+        <div class="result-label">Logo, packaging design, social templates, and brand color system created</div>
+      </div>
+      <div class="result-card fade-in">
+        <div class="result-num">Multi</div>
+        <div class="result-label">Paid ads, organic content, and affiliate marketing all running in parallel</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK -->
+  <div class="back-wrap">
+    <a href="index.html" class="back-btn">← Back to Portfolio</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>Ashley Duong</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
