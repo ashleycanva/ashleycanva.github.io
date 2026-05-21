@@ -135,6 +135,62 @@
       font-size: 0.8rem; color: var(--muted); line-height: 1.5; text-align: center;
     }
 
+    /* INTERACTIVE TOOLS */
+    #tools { background: var(--dark); }
+    #tools .section-label { color: var(--gold); }
+    #tools .section-title { color: var(--white); }
+    #tools .divider { background: var(--teal); }
+    .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .tool-card {
+      background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 1.4rem; overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .tool-card:hover { transform: translateY(-6px); border-color: var(--teal); }
+    .tool-screenshot {
+      width: 100%; aspect-ratio: 16/10;
+      overflow: hidden; position: relative;
+      background: var(--dark);
+    }
+    .tool-screenshot img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .tool-card:hover .tool-screenshot img { transform: scale(1.03); }
+    .tool-info { padding: 1.8rem 2rem; }
+    .tool-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--teal); font-weight: 600;
+      border: 1.5px solid rgba(117,176,156,0.35);
+      padding: 0.25rem 0.8rem; border-radius: 2rem; margin-bottom: 0.9rem;
+    }
+    .tool-title {
+      font-family: 'Newsreader', serif;
+      font-size: 1.35rem; color: var(--white);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .tool-desc {
+      font-size: 0.9rem; color: rgba(255,255,255,0.5);
+      line-height: 1.75; font-weight: 300;
+    }
+    .tool-highlights {
+      display: flex; flex-direction: column; gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+    .tool-highlight {
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      font-size: 0.85rem; color: rgba(255,255,255,0.65);
+    }
+    .tool-highlight::before {
+      content: '✦'; color: var(--gold);
+      font-size: 0.6rem; margin-top: 0.35rem; flex-shrink: 0;
+    }
+    @media (max-width: 900px) { .tools-grid { grid-template-columns: 1fr; } }
+
     /* SHOWCASE GALLERY */
     #showcase { background: var(--white); }
     .showcase-tabs {
@@ -463,6 +519,50 @@
           </div>
           <p class="ba-caption">Rebuilt on Zoho Sites — cohesive branding, full Color PPF product line, dealer-ready collateral</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TOOLS -->
+  <section id="tools">
+    <div class="content-wrap">
+      <div class="section-label fade-in">Built for the Website</div>
+      <h2 class="section-title fade-in">Interactive Tools</h2>
+      <div class="divider fade-in"></div>
+      <div class="tools-grid">
+
+        <div class="tool-card fade-in">
+          <div class="tool-screenshot">
+            <img src="Portolio-images/Website-after/Color-selector.png" alt="UPPF Color Selector Tool" />
+          </div>
+          <div class="tool-info">
+            <div class="tool-tag">✦ Color Selector</div>
+            <div class="tool-title">Interactive Color PPF Selector</div>
+            <p class="tool-desc">Individually photographed 65+ car images — one for each available Color PPF shade — and built them into a fully interactive selector tool embedded on the UPPF website.</p>
+            <div class="tool-highlights">
+              <div class="tool-highlight">65+ individual car photos shot and edited for each color variant</div>
+              <div class="tool-highlight">Allows customers to visualize exactly how each film looks on a real vehicle</div>
+              <div class="tool-highlight">Directly supports the sales process by reducing purchase hesitation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-card fade-in">
+          <div class="tool-screenshot">
+            <img src="Portolio-images/Website-after/Screenshot%202026-05-20%20202023.png" alt="UPPF Window Tint Simulator" />
+          </div>
+          <div class="tool-info">
+            <div class="tool-tag">✦ Tint Simulator</div>
+            <div class="tool-title">Window Tint Simulator</div>
+            <p class="tool-desc">An interactive simulator that lets users preview different window tint percentages on a real car — and instantly check whether their chosen tint level is legal in their state.</p>
+            <div class="tool-highlights">
+              <div class="tool-highlight">Visual preview of tint darkness levels (5%, 20%, 35%, 50%, 70%) on a vehicle</div>
+              <div class="tool-highlight">Built-in state legal requirement checker — users select their state to see the limit</div>
+              <div class="tool-highlight">Reduces customer confusion and helps dealers close with confidence</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
