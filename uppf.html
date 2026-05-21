@@ -114,7 +114,10 @@
       gap: 0.6rem; color: #b0b0b8; font-size: 0.82rem; text-align: center;
       border: 2px dashed #c8c8c4;
       position: relative;
+      transition: transform 0.25s;
     }
+    .ba-img-slot:has(img) { border: none; background: var(--dark); }
+    .ba-img-slot:has(img):hover { transform: scale(1.01); }
     .ba-img-slot img {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
@@ -432,14 +435,13 @@
         <div class="ba-col">
           <span class="ba-label ba-label--before">● Before</span>
           <div class="ba-img-slot">
-            <!-- To add image: <img src="images/uppf-before-1.jpg" alt="UPPF website before" /> -->
-            <div class="slot-hint">🖼</div>
-            <span>before-1.jpg</span>
+            <img src="Portolio-images/Website/Website-Before.png" alt="UPPF website before" />
           </div>
           <div class="ba-img-slot">
-            <!-- To add image: <img src="images/uppf-before-2.jpg" alt="UPPF website before" /> -->
-            <div class="slot-hint">🖼</div>
-            <span>before-2.jpg</span>
+            <img src="Portolio-images/Website/Website-Before-2png.png" alt="UPPF website before 2" />
+          </div>
+          <div class="ba-img-slot">
+            <img src="Portolio-images/Website/Website-before-3png.png" alt="UPPF website before 3" />
           </div>
           <p class="ba-caption">Old website — outdated layout, inconsistent branding, no product showcase</p>
         </div>
@@ -451,14 +453,19 @@
         <div class="ba-col">
           <span class="ba-label ba-label--after">✦ After</span>
           <div class="ba-img-slot ba-img-slot--after">
-            <!-- To add image: <img src="images/uppf-after-1.jpg" alt="UPPF website after" /> -->
-            <div class="slot-hint">🖼</div>
-            <span>after-1.jpg</span>
+            <img src="Portolio-images/Website-after/Color-selector.png" alt="UPPF website after" />
           </div>
           <div class="ba-img-slot ba-img-slot--after">
-            <!-- To add image: <img src="images/uppf-after-2.jpg" alt="UPPF website after" /> -->
-            <div class="slot-hint">🖼</div>
-            <span>after-2.jpg</span>
+            <img src="Portolio-images/Website-after/Screenshot%202026-05-20%20201746.png" alt="UPPF website after" />
+          </div>
+          <div class="ba-img-slot ba-img-slot--after">
+            <img src="Portolio-images/Website-after/Screenshot%202026-05-20%20201935.png" alt="UPPF website after" />
+          </div>
+          <div class="ba-img-slot ba-img-slot--after">
+            <img src="Portolio-images/Website-after/Screenshot%202026-05-20%20202023.png" alt="UPPF website after" />
+          </div>
+          <div class="ba-img-slot ba-img-slot--after">
+            <img src="Portolio-images/Website-after/Screenshot%202026-05-20%20202113.png" alt="UPPF website after" />
           </div>
           <p class="ba-caption">Rebuilt on Zoho Sites — cohesive branding, full Color PPF product line, dealer-ready collateral</p>
         </div>
