@@ -36,12 +36,16 @@
 
     /* HERO */
     .cs-hero {
-      background: linear-gradient(135deg, #3a0808 0%, #5a1212 40%, #1f1020 100%);
+      background: url('Portolio-images/Tasty-Point/Screenshot%202026-05-26%20181006.png') center center / cover no-repeat;
       padding: 10rem 4rem 6rem;
       position: relative; overflow: hidden;
     }
-    .cs-hero-blob1 { position: absolute; top: -60px; right: -80px; width: 420px; height: 420px; border-radius: 50%; background: #c0392b; opacity: 0.07; }
-    .cs-hero-blob2 { position: absolute; bottom: -40px; left: 20%; width: 280px; height: 280px; border-radius: 50%; background: var(--gold); opacity: 0.06; }
+    .cs-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(30,5,5,0.92) 0%, rgba(30,5,5,0.6) 50%, rgba(30,5,5,0.35) 100%);
+    }
+    .cs-hero-blob1 { display: none; }
+    .cs-hero-blob2 { display: none; }
     .cs-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
     .cs-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); font-weight: 600; border: 1.5px solid var(--teal); padding: 0.3rem 1rem; border-radius: 2rem; margin-bottom: 1.8rem; }
     .cs-hero-title { font-family: 'Newsreader', serif; font-size: clamp(3rem, 7vw, 5.5rem); color: var(--white); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0.9rem; }
