@@ -99,6 +99,33 @@
     .results-summary p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.85; font-weight: 300; }
     .results-summary p + p { margin-top: 0.9rem; }
 
+    /* SHOWCASE GALLERY */
+    .showcase-section { background: var(--off); padding: 6rem 4rem; }
+    .showcase-section .content-wrap { max-width: 900px; margin: 0 auto; }
+    .showcase-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .showcase-item {
+      border-radius: 1rem; overflow: hidden;
+      background: var(--dark);
+      aspect-ratio: 1/1;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .showcase-item:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.15); }
+    .showcase-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+    .showcase-item:hover img { transform: scale(1.04); }
+    @media (max-width: 900px) {
+      .showcase-section { padding: 4rem 1.5rem; }
+      .showcase-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+
     /* BACK CTA */
     .back-cta { background: var(--off); padding: 5.5rem 4rem; text-align: center; }
     .back-cta .section-label { margin-bottom: 0.6rem; }
@@ -303,6 +330,35 @@
       </div>
     </div>
   </section>
+
+  <!-- SHOWCASE GALLERY -->
+  <div class="showcase-section">
+    <div class="content-wrap">
+      <div class="section-label fade-in">Creative Work</div>
+      <h2 class="section-title fade-in">Work Showcase</h2>
+      <div class="divider fade-in"></div>
+      <div class="showcase-gallery fade-in">
+        <div class="showcase-item">
+          <img src="Portolio-images/Tasty-Point/Screenshot%202026-05-26%20180804.png" alt="Chinatown Hotpot showcase" />
+        </div>
+        <div class="showcase-item">
+          <img src="Portolio-images/Tasty-Point/Screenshot%202026-05-26%20180857.png" alt="Chinatown Hotpot showcase" />
+        </div>
+        <div class="showcase-item">
+          <img src="Portolio-images/Tasty-Point/Screenshot%202026-05-26%20180921.png" alt="Chinatown Hotpot showcase" />
+        </div>
+        <div class="showcase-item">
+          <img src="Portolio-images/Tasty-Point/Screenshot%202026-05-26%20180947.png" alt="Chinatown Hotpot showcase" />
+        </div>
+        <div class="showcase-item">
+          <img src="Portolio-images/Tasty-Point/Screenshot%202026-05-26%20181006.png" alt="Chinatown Hotpot showcase" />
+        </div>
+        <div class="showcase-item">
+          <img src="Portolio-images/Tasty-Point/Screenshot%202026-05-26%20181043.png" alt="Chinatown Hotpot showcase" />
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- BACK CTA -->
   <div class="back-cta">
