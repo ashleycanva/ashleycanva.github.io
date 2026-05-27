@@ -188,133 +188,93 @@
       background: var(--white);
     }
 
-    .hero-blob {
-      position: absolute;
-      top: -5%; right: -8%;
-      width: 52%; height: 110%;
-      background: var(--gold);
-      border-radius: 50% 0 0 55%;
-      opacity: 0.18;
-      z-index: 0;
-    }
-
-    .hero-blob2 {
-      position: absolute;
-      bottom: -10%; right: 18%;
-      width: 260px; height: 260px;
-      background: var(--teal);
-      border-radius: 50%;
-      opacity: 0.13;
-      z-index: 0;
-    }
-
-    /* ── PARALLAX DEPTH LAYERS ── */
-    .px-layer {
+    /* ── AURORA HERO EFFECT ── */
+    .aurora-wrap {
       position: absolute;
       inset: 0;
       pointer-events: none;
-      will-change: transform;
+      z-index: 0;
+      overflow: hidden;
     }
 
-    /* subtle dot-grid that fades toward the left */
-    .px-mesh {
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(117,176,156,0.28) 1px, transparent 1px);
-      background-size: 36px 36px;
-      background-position: 18px 18px;
-      -webkit-mask-image: radial-gradient(ellipse 65% 80% at 82% 48%, black 0%, transparent 75%);
-      mask-image: radial-gradient(ellipse 65% 80% at 82% 48%, black 0%, transparent 75%);
-      opacity: 0.6;
-    }
+    /* each orb is a positioner; the inner div carries the colour + animation
+       so CSS keyframe transform doesn't fight the JS mouse-track transform   */
+    .aurora-orb { position: absolute; }
 
-    /* ring outlines */
-    .px-ring {
-      position: absolute;
+    .aurora-inner {
+      width: 100%; height: 100%;
       border-radius: 50%;
     }
-    .px-ring--1 {
-      width: 500px; height: 500px;
-      top: -80px; right: -70px;
-      border: 1.5px solid rgba(117,176,156,0.16);
-    }
-    .px-ring--2 {
-      width: 300px; height: 300px;
-      bottom: 6%; right: 6%;
-      border: 1px solid rgba(249,220,92,0.22);
-    }
-    .px-ring--3 {
-      width: 160px; height: 160px;
-      top: 18%; right: 28%;
-      border: 1px solid rgba(117,176,156,0.1);
+
+    /* Orb 1 — large teal, top-right */
+    .aurora-orb--1 { width: 720px; height: 720px; top: -22%; right: -14%; }
+    .aurora-orb--1 .aurora-inner {
+      background: radial-gradient(circle at 42% 42%,
+        rgba(117,176,156,0.52) 0%, rgba(117,176,156,0.12) 48%, transparent 72%);
+      filter: blur(58px);
+      animation: aura1 9s ease-in-out infinite alternate;
     }
 
-    /* floating dots */
-    .px-dot {
+    /* Orb 2 — gold, bottom-right */
+    .aurora-orb--2 { width: 520px; height: 520px; bottom: -20%; right: 10%; }
+    .aurora-orb--2 .aurora-inner {
+      background: radial-gradient(circle at 50% 50%,
+        rgba(249,220,92,0.38) 0%, rgba(249,220,92,0.08) 48%, transparent 72%);
+      filter: blur(68px);
+      animation: aura2 12s ease-in-out infinite alternate;
+    }
+
+    /* Orb 3 — soft teal, mid */
+    .aurora-orb--3 { width: 400px; height: 400px; top: 38%; right: 28%; }
+    .aurora-orb--3 .aurora-inner {
+      background: radial-gradient(circle at 50% 50%,
+        rgba(117,176,156,0.22) 0%, transparent 65%);
+      filter: blur(52px);
+      animation: aura3 16s ease-in-out infinite alternate;
+    }
+
+    /* Orb 4 — accent gold, upper-mid */
+    .aurora-orb--4 { width: 260px; height: 260px; top: 10%; right: 20%; }
+    .aurora-orb--4 .aurora-inner {
+      background: radial-gradient(circle at 50% 50%,
+        rgba(249,220,92,0.28) 0%, transparent 65%);
+      filter: blur(42px);
+      animation: aura4 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes aura1 {
+      0%   { transform: translate(0px,   0px)  scale(1);    }
+      50%  { transform: translate(28px, -22px) scale(1.05); }
+      100% { transform: translate(-14px, 18px) scale(0.97); }
+    }
+    @keyframes aura2 {
+      0%   { transform: translate(0px,   0px)  scale(1);    }
+      50%  { transform: translate(-22px, 16px) scale(1.06); }
+      100% { transform: translate(18px, -10px) scale(0.95); }
+    }
+    @keyframes aura3 {
+      0%   { transform: translate(0px,  0px)  scale(1);    }
+      50%  { transform: translate(16px, 24px) scale(1.08); }
+      100% { transform: translate(-18px,-6px) scale(0.94); }
+    }
+    @keyframes aura4 {
+      0%   { transform: translate(0px,   0px)  scale(1);   }
+      50%  { transform: translate(-10px,-16px) scale(1.1); }
+      100% { transform: translate(12px,  10px) scale(0.9); }
+    }
+
+    /* Soft cursor-following glow */
+    .mouse-glow {
       position: absolute;
+      width: 420px; height: 420px;
       border-radius: 50%;
-    }
-    .px-dot--1 { width:11px; height:11px; background:var(--gold);  opacity:0.55; right:21%; top:27%; }
-    .px-dot--2 { width: 7px; height: 7px; background:var(--teal);  opacity:0.50; right:37%; bottom:31%; }
-    .px-dot--3 { width:16px; height:16px; background:var(--gold);  opacity:0.20; right:13%; bottom:27%; }
-    .px-dot--4 { width: 5px; height: 5px; background:var(--dark);  opacity:0.12; right:44%; top:38%; }
-
-    /* sparkle marks */
-    .px-sparkle {
-      position: absolute;
-      font-style: normal;
-      color: var(--teal);
-      line-height: 1;
-      user-select: none;
-    }
-    .px-sparkle--1 { font-size:1.1rem; opacity:0.38; right:29%; top:21%; }
-    .px-sparkle--2 { font-size:0.7rem; opacity:0.25; right:54%; bottom:27%; }
-    .px-sparkle--3 { font-size:1.6rem; opacity:0.12; right:10%; top:16%; }
-
-    /* glassmorphism floating stat cards */
-    .px-stat {
-      position: absolute;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(117,176,156,0.22);
-      border-radius: 16px;
-      padding: 1rem 1.4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.07), 0 1px 0 rgba(255,255,255,0.9) inset;
-      animation: px-rise 0.9s cubic-bezier(.23,1,.32,1) both;
-    }
-    .px-stat--1 { right:9%;  top:32%; animation-delay:0.25s; }
-    .px-stat--2 { right:17%; top:56%; animation-delay:0.45s; }
-
-    .px-stat-num {
-      font-family: 'Newsreader', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1;
-    }
-    .px-stat-label {
-      font-size: 0.62rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-    }
-
-    @keyframes px-rise {
-      from { opacity:0; transform:translateY(18px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-
-    /* hide all parallax decorations on small screens */
-    @media (max-width: 900px) {
-      .px-layer:not(#heroContentLayer) { display: none; }
-      .px-stat, .px-ring, .px-dot, .px-sparkle, .px-mesh { display: none; }
+      background: radial-gradient(circle, rgba(117,176,156,0.18) 0%, transparent 70%);
+      filter: blur(48px);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
     }
 
     .hero-content { position: relative; z-index: 1; max-width: 680px; }
@@ -801,40 +761,16 @@
   <!-- HERO -->
   <section id="home">
 
-    <!-- ▸ Layer 1 — deepest / slowest: gold blob + dot-grid mesh -->
-    <div class="px-layer" data-mouse="0.016" data-scroll="0.16">
-      <div class="hero-blob"></div>
-      <div class="px-mesh"></div>
+    <!-- Aurora background -->
+    <div class="aurora-wrap" aria-hidden="true">
+      <div class="aurora-orb aurora-orb--1"><div class="aurora-inner"></div></div>
+      <div class="aurora-orb aurora-orb--2"><div class="aurora-inner"></div></div>
+      <div class="aurora-orb aurora-orb--3"><div class="aurora-inner"></div></div>
+      <div class="aurora-orb aurora-orb--4"><div class="aurora-inner"></div></div>
+      <div class="mouse-glow" id="mouseGlow"></div>
     </div>
 
-    <!-- ▸ Layer 2 — mid: teal blob + ring outlines -->
-    <div class="px-layer" data-mouse="0.036" data-scroll="0.30">
-      <div class="hero-blob2"></div>
-      <div class="px-ring px-ring--1"></div>
-      <div class="px-ring px-ring--2"></div>
-      <div class="px-ring px-ring--3"></div>
-    </div>
-
-    <!-- ▸ Layer 3 — near: dots, sparkles, floating stat cards -->
-    <div class="px-layer" data-mouse="0.068" data-scroll="0.46">
-      <div class="px-dot px-dot--1"></div>
-      <div class="px-dot px-dot--2"></div>
-      <div class="px-dot px-dot--3"></div>
-      <div class="px-dot px-dot--4"></div>
-      <span class="px-sparkle px-sparkle--1">✦</span>
-      <span class="px-sparkle px-sparkle--2">✦</span>
-      <span class="px-sparkle px-sparkle--3">✦</span>
-      <div class="px-stat px-stat--1">
-        <span class="px-stat-num">4+</span>
-        <span class="px-stat-label">Years Experience</span>
-      </div>
-      <div class="px-stat px-stat--2">
-        <span class="px-stat-num">3K+</span>
-        <span class="px-stat-label">Followers Grown</span>
-      </div>
-    </div>
-
-    <!-- ▸ Foreground content — almost no movement, stays grounded -->
+    <!-- Content -->
     <div class="hero-content" id="heroContent">
       <div class="hero-tag">✦ Digital Marketing Specialist</div>
       <h1 class="hero-title">
@@ -1157,83 +1093,61 @@
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
 
-    // ─── PARALLAX DEPTH LAYERS ───────────────────────────────────────────────
+    // ─── AURORA + 3D TILT HERO EFFECT ───────────────────────────────────────
     (function () {
       const hero    = document.getElementById('home');
-      const layers  = hero.querySelectorAll('.px-layer');
       const content = document.getElementById('heroContent');
-      if (!hero || !content) return;
+      const glow    = document.getElementById('mouseGlow');
+      const orbs    = document.querySelectorAll('.aurora-orb');
+      if (!hero || !content || !glow) return;
 
-      // Current mouse position (initialised to hero centre so nothing jumps)
-      let curX = 0, curY = 0;
-      let heroW = 0, heroH = 0;
-      let transitioning = false;
+      let leaving = false;
 
-      function measure() {
-        const r = hero.getBoundingClientRect();
-        heroW = r.width;
-        heroH = r.height;
-        // seed mouse at centre so first render is neutral
-        curX = heroW / 2;
-        curY = heroH / 2;
-      }
-      measure();
-      window.addEventListener('resize', measure, { passive: true });
-
-      // Apply transforms to every layer + content
-      function applyParallax() {
-        const sy = window.scrollY;
-        const dx = curX - heroW / 2;   // offset from centre
-        const dy = curY - heroH / 2;
-
-        layers.forEach(layer => {
-          const ms = parseFloat(layer.dataset.mouse  || 0);
-          const ss = parseFloat(layer.dataset.scroll || 0);
-          const tx =  dx * ms;
-          const ty =  dy * ms + sy * ss;
-          layer.style.transform = `translate(${tx}px, ${ty}px)`;
-        });
-
-        // Foreground content barely drifts — feels grounded, adds micro-depth
-        content.style.transform = `translate(${dx * 0.006}px, ${dy * 0.006}px)`;
-      }
-
-      // Mouse move inside hero
       hero.addEventListener('mousemove', e => {
-        if (transitioning) {
-          // clear the ease-out transition so live tracking is instant
-          layers.forEach(l => l.style.transition = '');
-          content.style.transition = '';
-          transitioning = false;
-        }
-        const r = hero.getBoundingClientRect();
-        curX = e.clientX - r.left;
-        curY = e.clientY - r.top;
-        applyParallax();
+        leaving = false;
+        const rect = hero.getBoundingClientRect();
+        const x  = e.clientX - rect.left;
+        const y  = e.clientY - rect.top;
+        const cx = rect.width  / 2;
+        const cy = rect.height / 2;
+        const mx = (x - cx) / cx;   // −1 → +1  (left → right)
+        const my = (y - cy) / cy;   // −1 → +1  (top  → bottom)
+
+        // Cursor glow follows mouse instantly
+        glow.style.left    = x + 'px';
+        glow.style.top     = y + 'px';
+        glow.style.opacity = '1';
+
+        // 3-D tilt on text content — max ±4°, snappy response
+        content.style.transition = 'transform 0.12s ease-out';
+        content.style.transform  =
+          `perspective(1100px) rotateX(${-my * 4}deg) rotateY(${mx * 4}deg) translateZ(0)`;
+
+        // Aurora orbs drift slightly toward the cursor — each at a different depth
+        orbs.forEach((orb, i) => {
+          const d = (i + 1) * 10;   // 10 / 20 / 30 / 40 px max
+          orb.style.transition = 'transform 0.6s cubic-bezier(.23,1,.32,1)';
+          orb.style.transform  = `translate(${mx * d}px, ${my * d}px)`;
+        });
       }, { passive: true });
 
-      // Smooth reset when mouse leaves
       hero.addEventListener('mouseleave', () => {
-        transitioning = true;
-        const ease = 'transform 0.9s cubic-bezier(.23,1,.32,1)';
-        layers.forEach(l => l.style.transition = ease);
-        content.style.transition = ease;
-        curX = heroW / 2;
-        curY = heroH / 2;
-        applyParallax();
-        setTimeout(() => {
-          layers.forEach(l => l.style.transition = '');
-          content.style.transition = '';
-          transitioning = false;
-        }, 920);
+        leaving = true;
+        glow.style.opacity = '0';
+
+        // Spring-ease everything back to rest
+        const spring = 'transform 1s cubic-bezier(.23,1,.32,1)';
+        content.style.transition = spring;
+        content.style.transform  =
+          'perspective(1100px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+
+        orbs.forEach(orb => {
+          orb.style.transition = spring;
+          orb.style.transform  = 'translate(0px, 0px)';
+        });
       });
-
-      // Scroll drives the depth-offset on all layers
-      window.addEventListener('scroll', applyParallax, { passive: true });
-
-      applyParallax(); // initial render
     })();
-    // ────────────────────────────────────────────────────────────────────────
+    // ─────────────────────────────────────────────────────────────────────────
   </script>
 </body>
 </html>
