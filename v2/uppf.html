@@ -79,39 +79,96 @@
           <p class="hl">Funnel · promo calendar · brand protocols</p>
         </div>
       </div>
-      <p class="cs-result reveal">The brand came through the rebrand with its partners intact, grew to <b>400+ national dealers</b>, and gained its first real consumer audience, led by a Reel made entirely in-house.</p>
+      <p class="cs-result reveal">The brand came through the rebrand with its partners intact, grew to <b>400+ national dealers</b>, and gained its first real consumer audience, with plain-language content that tripled sales in a single month.</p>
     </div>
   </section>
 
-  <!-- WEBSITE -->
+  <!-- TOOLS -->
   <section class="slide slide--blue">
     <div class="wrap">
-      <div class="eyebrow reveal">Website revamp</div>
-      <h2 class="display section-head reveal">Before &amp; after</h2>
-      <div class="ba reveal">
-        <div class="before">
-          <span class="ba-label">Before</span>
-          <a href="Portolio-images/Website/Website-Before.png" data-zoom><img src="Portolio-images/Website/Website-Before.png" alt="Old website with an outdated layout" loading="lazy" /></a>
+      <div class="eyebrow reveal">Interactive sales tools</div>
+      <h2 class="display section-head reveal">Try them out</h2>
+      <p class="sim-intro reveal">Two tools I created to help shoppers decide and dealers close, recreated here as shortened demos.</p>
+
+      <div class="demo-row reveal">
+        <div class="app" data-app="color">
+          <div class="app-bar">
+            <span class="app-title">Color Selector</span>
+            <a class="app-pill" href="#tint-demo">Tints</a>
+          </div>
+          <p class="app-demo"><b>Demo only.</b> A shortened recreation for my portfolio, not the real tool.</p>
+          <div class="app-stage" data-out="stage">
+            <div class="app-view" data-view="a">
+              <img class="app-photo" data-out="a-img" alt="" />
+              <span class="app-ab" hidden>A</span>
+            </div>
+            <div class="app-view" data-view="b" hidden>
+              <img class="app-photo" data-out="b-img" alt="" />
+              <span class="app-ab">B</span>
+            </div>
+          </div>
+          <div class="app-info" aria-live="polite"><span class="app-badge" data-out="badge"></span><b data-out="name"></b></div>
+          <p class="app-warn">Actual color may vary due to screen display differences.</p>
+          <div class="app-section">
+            <h4 class="app-h">Color compare</h4>
+            <p class="app-mute">Click any color to preview it above. Then tap the <b>+</b> on a second color and hit <b>Compare</b>.</p>
+            <div class="app-compare">
+              <div class="cmp-slot is-a"><span class="cmp-k">A · Selected</span><b data-out="cmp-a"></b><small data-out="cmp-a-s"></small></div>
+              <span class="cmp-vs">VS</span>
+              <div class="cmp-slot" data-out="cmp-b-slot"><span class="cmp-k">B</span><b data-out="cmp-b">Tap + on any color</b><small data-out="cmp-b-s"></small></div>
+            </div>
+            <button type="button" class="app-btn" data-act="compare" disabled>Compare</button>
+          </div>
+          <div class="app-tabs" role="group" aria-label="Finish series" data-out="tabs"></div>
+          <div class="app-grid" data-out="grid"></div>
         </div>
-        <div class="after">
-          <span class="ba-label">After</span>
-          <a href="Portolio-images/Website-after/Homepage.png" data-zoom><img src="Portolio-images/Website-after/Homepage.png" alt="Rebuilt website homepage" loading="lazy" /></a>
+        <div class="demo-text">
+          <h3>Color PPF selector</h3>
+          <p>The real tool covers 81 shades across 6 finishes, each shown on a photo-real car made with design tools and AI editing. Shoppers compare two colors side by side or spin a 360 view before they visit.</p>
+          <a class="sim-link" href="Portolio-images/Website-after/Color-selector.png" data-zoom>See a screenshot of the real tool</a>
         </div>
       </div>
-      <div class="tools">
-        <div class="tool reveal">
-          <a href="Portolio-images/Website-after/Color-selector.png" data-zoom><img src="Portolio-images/Website-after/Color-selector.png" alt="Interactive Color PPF selector" loading="lazy" /></a>
-          <div>
-            <h3>Color PPF selector</h3>
-            <p>65+ car visuals, one per film shade, made with design tools and AI editing, so shoppers see exactly how each color looks on a real car.</p>
+
+      <div class="demo-row reveal" id="tint-demo">
+        <div class="app" data-app="tint">
+          <div class="app-bar">
+            <span class="app-title">Tint Simulator</span>
+            <span class="app-pill app-pill--ghost"><b data-out="pill-vlt"></b> <span data-out="pill-film"></span></span>
+          </div>
+          <p class="app-demo"><b>Demo only.</b> A shortened recreation for my portfolio, not the real tool.</p>
+          <div class="app-stage app-stage--dark">
+            <img class="app-photo app-photo--tint" data-out="tint-img" alt="" />
+            <div class="app-meter"><span class="app-meter-bar"><i data-out="meter"></i></span><b data-out="light"></b></div>
+          </div>
+          <div class="vlt-row" role="group" aria-label="Tint shade">
+            <button type="button" data-vlt="5" aria-pressed="false"><b>5%</b><small>VLT</small></button>
+            <button type="button" data-vlt="20" aria-pressed="false"><b>20%</b><small>VLT</small></button>
+            <button type="button" data-vlt="35" aria-pressed="true"><b>35%</b><small>VLT</small></button>
+            <button type="button" data-vlt="45" aria-pressed="false"><b>45%</b><small>VLT</small></button>
+            <button type="button" data-vlt="55" aria-pressed="false"><b>55%</b><small>VLT</small></button>
+            <button type="button" data-vlt="70" aria-pressed="false"><b>70%</b><small>VLT</small></button>
+          </div>
+          <div class="vlt-ends"><span>Darkest</span><span>tap to switch</span><span>Lightest</span></div>
+          <span class="law" data-out="law" aria-live="polite"></span>
+          <div class="app-stats">
+            <div><b data-out="uv"></b><small>UV blocked</small></div>
+            <div><b data-out="ir"></b><small>IR blocked</small></div>
+            <div><b data-out="solar"></b><small>Solar</small></div>
+          </div>
+          <div class="app-panel">
+            <div class="app-panel-h"><b>Film specifications</b><span data-out="code"></span></div>
+            <div class="spec-bar"><span>Total solar energy rejection</span><b data-out="bar-solar"></b><i><em data-out="fill-solar"></em></i></div>
+            <div class="spec-bar"><span>Infrared energy rejection</span><b data-out="bar-ir"></b><i><em data-out="fill-ir"></em></i></div>
+            <div class="spec-bar"><span>Selective infrared rejection</span><b data-out="bar-sir"></b><i><em data-out="fill-sir"></em></i></div>
+            <div class="spec-bar"><span>UV rejection</span><b data-out="bar-uv"></b><i><em data-out="fill-uv"></em></i></div>
+            <p class="app-mute" data-out="desc"></p>
+            <div class="app-tech"><b>Nano-ceramic technology</b><small>Non-metallic · signal safe · no interference</small></div>
           </div>
         </div>
-        <div class="tool reveal">
-          <a href="Portolio-images/Website-after/Screenshot%202026-05-20%20202023.png" data-zoom><img src="Portolio-images/Website-after/Screenshot%202026-05-20%20202023.png" alt="Window tint simulator" loading="lazy" /></a>
-          <div>
-            <h3>Window tint simulator</h3>
-            <p>Preview tint levels from 5% to 70% on a car and check the legal limit for your state, so dealers close with less back-and-forth.</p>
-          </div>
+        <div class="demo-text">
+          <h3>Window tint simulator</h3>
+          <p>The real tool previews 6 ceramic shades on a photo-real car, shows the heat and UV specs for each, and checks the tint law for the shopper's state, so dealers close with less back-and-forth.</p>
+          <a class="sim-link" href="Portolio-images/Website-after/Screenshot%202026-05-20%20202023.png" data-zoom>See a screenshot of the real tool</a>
         </div>
       </div>
     </div>
@@ -203,6 +260,108 @@ document.querySelectorAll('a[data-zoom]').forEach(a => {
 });
 box.addEventListener('click', () => box.classList.remove('open'));
 addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('open'); });
+
+// Tool demos
+const SERIES = [
+  { name: 'Pure', colors: ['Midnight', 'Candyred', 'Goldrush'] },
+  { name: 'Satin', colors: ['Nightshade', 'Frostcoat', 'Redstone'] },
+  { name: 'Metallic', colors: ['Oxblood', 'Bluevolt', 'Graphite'] },
+  { name: 'Magic', colors: ['BorealisBlue', 'Auroragold', 'Pearlnova'] },
+  { name: 'Texture', colors: ['Fibergloss', 'Fiberweave'] },
+  { name: 'Glitter', colors: ['Sapphire', 'Ruby', 'Emerald'] },
+];
+const photo = (s, c, thumb) => `assets/tools/${s.name.toLowerCase()}-${c.toLowerCase()}${thumb ? '-thumb' : ''}.webp`;
+
+const colorApp = document.querySelector('[data-app="color"]');
+const $c = k => colorApp.querySelector(`[data-out="${k}"]`);
+const state = { tab: 0, a: [0, 0], b: null, comparing: false };
+const pick = ([si, ci]) => [SERIES[si], SERIES[si].colors[ci]];
+const showPhoto = (img, s, c) => { img.src = photo(s, c); img.alt = `${c}, ${s.name} series film on a sports car`; };
+
+function renderColor() {
+  const [as, ac] = pick(state.a);
+  showPhoto($c('a-img'), as, ac);
+  $c('badge').textContent = as.name;
+  $c('name').textContent = ac;
+  $c('cmp-a').textContent = ac;
+  $c('cmp-a-s').textContent = as.name;
+  if (state.b) {
+    const [bs, bc] = pick(state.b);
+    showPhoto($c('b-img'), bs, bc);
+    $c('cmp-b').textContent = bc;
+    $c('cmp-b-s').textContent = bs.name;
+  }
+  $c('cmp-b-slot').classList.toggle('is-b', !!state.b);
+  const btn = colorApp.querySelector('[data-act="compare"]');
+  btn.disabled = !state.b;
+  btn.textContent = state.comparing ? 'Exit compare' : 'Compare';
+  colorApp.querySelector('[data-view="b"]').hidden = !state.comparing;
+  colorApp.querySelector('[data-view="a"] .app-ab').hidden = !state.comparing;
+  $c('stage').classList.toggle('is-compare', state.comparing);
+
+  $c('tabs').innerHTML = SERIES.map((s, i) =>
+    `<button type="button" data-tab="${i}" aria-pressed="${i === state.tab}">${s.name} <span>${s.colors.length}</span></button>`).join('');
+  const s = SERIES[state.tab];
+  $c('grid').innerHTML = s.colors.map((c, ci) => {
+    const isA = state.a[0] === state.tab && state.a[1] === ci;
+    const isB = state.b && state.b[0] === state.tab && state.b[1] === ci;
+    const corner = isA ? '<span class="cc-badge">A</span>'
+      : isB ? '<span class="cc-badge cc-badge--b">B</span>'
+      : `<button type="button" class="cc-plus" aria-label="Add ${c} to compare">+</button>`;
+    return `<div class="cc${isA ? ' is-a' : ''}${isB ? ' is-b' : ''}" data-ci="${ci}">
+      <button type="button" class="cc-main" aria-label="Preview ${c}"><img src="${photo(s, c, true)}" alt="" loading="lazy" /><span>${c}</span></button>
+      ${corner}
+    </div>`;
+  }).join('');
+}
+
+colorApp.addEventListener('click', e => {
+  const t = e.target.closest('button');
+  if (!t) return;
+  if (t.dataset.tab) state.tab = +t.dataset.tab;
+  else if (t.dataset.act === 'compare') state.comparing = !state.comparing;
+  else {
+    const ci = +t.closest('.cc').dataset.ci;
+    if (t.classList.contains('cc-plus')) state.b = [state.tab, ci];
+    else state.a = [state.tab, ci];
+  }
+  renderColor();
+});
+renderColor();
+
+const SHADES = {
+  5: { uv: 99, ir: 73, solar: 72, sir: 95, desc: 'The darkest shade. Limo-level privacy and the most heat rejection, best kept to rear windows.' },
+  20: { uv: 99, ir: 75, solar: 68, sir: 96, desc: 'A favorite for rear windows: a dark, private look without going pitch black.' },
+  35: { uv: 99, ir: 73, solar: 59, sir: 90, desc: 'Balances privacy with daytime clarity. A common pick for the whole car.' },
+  45: { uv: 99, ir: 74, solar: 58, sir: 94, desc: 'A light tint that looks close to factory glass while still cutting heat.' },
+  55: { uv: 99, ir: 75, solar: 55, sir: 92, desc: 'Barely visible. Keeps full clarity, good for windshields and sunroofs.' },
+  70: { uv: 99, ir: 68, solar: 46, sir: 84, desc: 'Near invisible. Made for windshields and front glass where visibility comes first.' },
+};
+Object.keys(SHADES).forEach(v => { new Image().src = `assets/tools/tint-${v}.webp`; });
+const tintApp = document.querySelector('[data-app="tint"]');
+const $t = k => tintApp.querySelector(`[data-out="${k}"]`);
+function setTint(vlt) {
+  const d = SHADES[vlt], film = 'Ceramic ' + String(vlt).padStart(2, '0');
+  tintApp.querySelectorAll('[data-vlt]').forEach(b => b.setAttribute('aria-pressed', +b.dataset.vlt === vlt));
+  $t('tint-img').src = `assets/tools/tint-${vlt}.webp`;
+  $t('tint-img').alt = `Silver sedan with ${vlt}% window tint`;
+  $t('pill-vlt').textContent = vlt + '%';
+  $t('pill-film').textContent = film;
+  $t('meter').style.width = vlt + '%';
+  $t('light').textContent = vlt + '% light in';
+  const legal = vlt >= 25;
+  $t('law').textContent = legal ? '✓ Texas: legal on front and rear' : '✕ Texas: front needs 25%+, rear only';
+  $t('law').className = 'law ' + (legal ? 'law--ok' : 'law--no');
+  for (const k of ['uv', 'ir', 'solar']) $t(k).textContent = d[k] + '%';
+  for (const k of ['solar', 'ir', 'sir', 'uv']) {
+    $t('bar-' + k).textContent = d[k] + '%';
+    $t('fill-' + k).style.width = d[k] + '%';
+  }
+  $t('code').textContent = film + ' · 2 mil';
+  $t('desc').textContent = d.desc;
+}
+tintApp.addEventListener('click', e => { const b = e.target.closest('[data-vlt]'); if (b) setTint(+b.dataset.vlt); });
+setTint(35);
 
 </script>
 </body>
